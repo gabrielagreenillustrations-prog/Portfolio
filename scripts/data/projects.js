@@ -38,16 +38,18 @@ const SIMGS = {
 };
 
 const SVIDS = {
-  smartons:            'assets/videos/smartons-cover.mp4',
-  aichat:              'assets/videos/aichat-cover.mp4',
-  'smartons-types':    'assets/videos/smartons-types.mov',
-  loyalty:             'assets/videos/co1ns-cover.mp4',
-  premium:             'assets/videos/premium-plans-cover.mp4',
-  'loyalty-roulette':  'assets/videos/loyalty-roulette.mp4',
-  'redesign-1':          'assets/videos/redesign-1.mov',
-  'aisim-problem':       'assets/videos/aisim-problem.mov',
-  'aisim-simulating':    'assets/videos/aisim-simulating.mov',
-  'aisim-nondeterministic':'assets/videos/aisim-nondeterministic.mov'
+  smartons:               'assets/videos/smartons-cover.mp4',
+  aichat:                 'assets/videos/aichat-cover.mp4',
+  'smartons-types':       'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626354/smartons-types_uhttmi.mov',
+  loyalty:                'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626769/co1ns-cover-compressed_lrmftb.mp4',
+  premium:                'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626352/premium-plans-cover_ksfgq9.mp4',
+  'loyalty-roulette':     'assets/videos/loyalty-roulette.mp4',
+  'redesign-1':           'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626338/redesign-1_xy2pjd.mov',
+  'aisim-problem':        'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626359/aisim-problem_shwxfy.mov',
+  'aisim-simulating':     'assets/videos/aisim-simulating.mov',
+  'aisim-nondeterministic':'assets/videos/aisim-nondeterministic.mov',
+  pawsitters:             'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626351/pawsitters-preview_erwfh5.mov',
+  'loyalty-cover':        'https://res.cloudinary.com/dcvlpk7d2/video/upload/v1781626768/loyalty-cover-compressed_ypcc8f.mp4'
 };
 
 const PROJECTS = {
