@@ -1,0 +1,74 @@
+/* ============================================================================
+   NAV / HEADER — sticky bar with progressive blur + gradient grain, tabs,
+   primary CTA, mobile menu.
+   ============================================================================ */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:transparent;
+  isolation:isolate; /* create stacking context so ::before/::after stay inside nav */
+}
+.nav::before,
+.nav::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:160%; /* extends past the nav so blur fades into the page */
+  pointer-events:none;
+  z-index:-1;
+}
+/* Layer 1: the backdrop blur, masked to fade out toward the bottom */
+.nav::before{
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  background-image:var(--grain-tex); /* gradient grain: rides the mask below — strong at top, fades down */
+  background-size:140px 140px;
+  -webkit-mask-image:linear-gradient(to bottom,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 40%,
+    rgba(0,0,0,.6) 65%,
+    rgba(0,0,0,.2) 85%,
+    rgba(0,0,0,0) 100%);
+          mask-image:linear-gradient(to bottom,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 40%,
+    rgba(0,0,0,.6) 65%,
+    rgba(0,0,0,.2) 85%,
+    rgba(0,0,0,0) 100%);
+}
+/* Layer 2: tinted bg overlay that fades out the same way */
+.nav::after{
+  background:linear-gradient(to bottom,
+    rgba(232,226,218,.6) 0%,
+    rgba(232,226,218,.5) 40%,
+    rgba(232,226,218,.2) 70%,
+    rgba(232,226,218,0) 100%);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad);height:60px;
+  position:relative;
+}
+.nav-left{display:flex;align-items:center}
+.nav-logo{display:flex;align-items:center;margin-right:var(--space-6);flex-shrink:0}
+.nav-logo .isologo{width:38px;height:38px}
+.nav-links{display:flex;align-items:center;gap:2px}
+/* NAV TABS — warm gray when selected (NOT the primary black) */
+.nav-links a{padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);font-size:var(--fs-md);font-weight:var(--fw-medium);color:var(--color-tab-ink);transition:color var(--dur-fast),background var(--dur-fast);white-space:nowrap;cursor:pointer}
+.nav-links a:hover{color:var(--color-tab-hover-ink);background:var(--color-tab-hover-bg)}
+.nav-links a:active{background:var(--color-tab-pressed-bg)}
+.nav-links a.active{background:var(--color-tab-active-bg);color:var(--color-tab-active-ink);font-weight:var(--fw-semibold)}
+.nav-links a.active:hover{background:var(--color-tab-active-bg);color:var(--color-tab-active-ink)}
+.nav-links a.active:active{background:var(--color-tab-pressed-bg)}
+/* PRIMARY CTA — the only black in the UI */
+.nav-cta{padding:var(--space-2) var(--space-5);background:var(--color-primary);color:var(--color-primary-ink);border-radius:var(--radius-pill);font-size:var(--fs-md);font-weight:var(--fw-semibold);transition:opacity var(--dur-fast);cursor:pointer}
+.nav-cta:hover{opacity:.85}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:22px}
+.nav-burger span{display:block;height:1.5px;background:var(--color-ink);border-radius:var(--radius-xs)}
+.mob{display:none;position:fixed;inset:0;background:var(--color-glass);backdrop-filter:blur(24px);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-10)}
+.mob.open{display:flex}
+.mob a{font-family:var(--font-heading);font-size:var(--fs-h3);font-weight:var(--fw-bold);cursor:pointer}
+.mob-x{position:absolute;top:var(--space-5);right:var(--space-6);font-size:var(--fs-3xl)}

@@ -1,0 +1,62 @@
+/* ── Custom cursors — fine-pointer (desktop) only ──────────────────────────
+   Cursor shapes  : Future Cursor set (.cur files)
+   Hover effect   : chip label that appears next to the cursor
+   ────────────────────────────────────────────────────────────────────────── */
+@media (pointer: fine) {
+
+  /* Default cursor — Normal.cur */
+  *, *::before, *::after {
+    cursor: url('assets/cursors/Normal.cur'), auto !important;
+  }
+
+  /* Pointer cursor — Link.cur for interactive elements */
+  a,
+  button,
+  .pcard,
+  .btn,
+  .nav-cta,
+  .mob a,
+  .footer-link,
+  [data-cursor],
+  [role="button"],
+  select {
+    cursor: url('assets/cursors/Link.cur'), pointer !important;
+  }
+
+  /* Text cursor — Text.cur for input fields */
+  input,
+  textarea {
+    cursor: url('assets/cursors/Text.cur'), text !important;
+  }
+
+  /* ── Chip label ─────────────────────────────────────────────────────── */
+  #cursor-chip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: var(--color-ink);
+    color: var(--color-on-dark);
+    font-family: var(--font-body);
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translate(18px, -50%) scale(0.85);
+    transition:
+      opacity var(--dur-fast) var(--ease),
+      transform var(--dur-fast) var(--ease);
+    will-change: left, top, opacity, transform;
+  }
+
+  #cursor-chip.is-visible {
+    opacity: 1;
+    transform: translate(22px, -50%) scale(1);
+  }
+
+}

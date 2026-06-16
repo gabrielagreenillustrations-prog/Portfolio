@@ -1,0 +1,7 @@
+/* ============================================================================
+   CONTACT — two-column intro + form. Form controls live in components/form.css.
+   ============================================================================ */
+#page-contact{background:var(--color-bg-alt)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-20);align-items:start}
+.contact-h{font-family:var(--font-heading);font-size:var(--fs-h2);font-weight:var(--fw-bold);letter-spacing:var(--ls-tight);margin-bottom:var(--space-3)}
+.contact-p{font-size:var(--fs-lg);color:var(--color-ink-55);line-height:var(--lh-relaxed);margin-bottom:var(--space-6)}

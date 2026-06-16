@@ -1,0 +1,25 @@
+/* ============================================================================
+   PROJECT CARD — work grid item. Placeholder fill lives in base.css.
+   ============================================================================ */
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-7)}
+.pcard{display:flex;flex-direction:column;gap:var(--space-3);cursor:pointer}
+.pcard-thumb{position:relative;overflow:hidden;border-radius:var(--radius-card);aspect-ratio:16/10;background:var(--color-placeholder);box-shadow:var(--shadow-card);transition:box-shadow .4s var(--ease),transform .4s var(--spring)}
+.pcard:hover .pcard-thumb{box-shadow:var(--shadow-card-hover);transform:scale(1.03) translateY(-4px)}
+.pcard-thumb img,.pcard-thumb video{width:100%;height:100%;object-fit:cover;border-radius:0;transition:transform var(--dur-slow) var(--ease)}
+.pcard:hover .pcard-thumb img,.pcard:hover .pcard-thumb video{transform:scale(1.06)}
+.pcard-btn{position:absolute;inset:0;z-index:2}
+.pcard-body{padding:0 var(--space-1)}
+.pcard-title{font-family:var(--font-heading);font-size:var(--fs-xl);font-weight:var(--fw-bold);margin-bottom:var(--space-1)}
+.pcard-desc{font-size:var(--fs-sm);color:var(--color-ink-55);line-height:var(--lh-normal)}
+.pcard-meta{font-size:var(--fs-xs);color:var(--color-ink-55);font-weight:var(--fw-medium);margin-top:var(--space-1)}
+/* Phone-frame card — beige bg, portrait video/image centred without cropping */
+.pcard-thumb--phone{background:var(--c-sand-100);display:flex;align-items:center;justify-content:center}
+.pcard-thumb--phone video,.pcard-thumb--phone img{width:auto;height:82%;aspect-ratio:auto;object-fit:contain;border-radius:28px}
+/* Desktop/UI video card — beige bg, video contained with 40px side gutters */
+.pcard-thumb--vid{background:var(--c-sand-100);display:flex;align-items:center;justify-content:center}
+.pcard-thumb--vid video{width:calc(100% - 80px);height:auto;max-height:100%;aspect-ratio:auto;object-fit:contain}
+/* SOON cards — non-interactive, muted thumb */
+.pcard.soon{cursor:default}
+.pcard.soon .pcard-thumb{opacity:.7}
+.pcard.soon:hover .pcard-thumb{box-shadow:var(--shadow-card);transform:none}
+.pcard.soon .pcard-fill::after{content:'Coming soon'}

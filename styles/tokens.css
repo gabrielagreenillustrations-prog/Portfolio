@@ -1,0 +1,107 @@
+/* ============================================================================
+   DESIGN TOKENS — single source of truth for the site.
+   Mirrors design-system/tokens.json (Figma) — see design-system/DESIGN-SYSTEM.md.
+   Figma `group/name` == CSS `--group-name`.
+   ============================================================================ */
+:root{
+  /* PRIMITIVE · color */
+  --c-sand-100:#f0ebe3;--c-sand-200:#e8e2da;--c-sand-300:#c8c2bb;
+  --c-cream:#f5f0ea;--c-ink-900:#111009;
+  --c-green-500:#22c55e;--c-green-800:#166634;--c-white:#fff;
+  --c-espresso-900:#201e0f;  /* primary CTA black (only true "black" in the UI) */
+  --c-stone-400:#aba592;     /* warm gray — selected nav tab */
+  --c-stone-500:#969080;     /* pressed nav tab */
+
+  /* PRIMITIVE · spacing (4px grid) */
+  --space-0:0;--space-0-5:.125rem;--space-1:.25rem;--space-1-5:.375rem;
+  --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;
+  --space-6:1.5rem;--space-7:1.75rem;--space-8:2rem;--space-10:2.5rem;
+  --space-12:3rem;--space-14:3.5rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+
+  /* PRIMITIVE · radius */
+  --radius-xs:2px;--radius-sm:.75rem;--radius-lg:1.25rem;
+  --radius-pill:100px;--radius-full:50%;
+
+  /* PRIMITIVE · type family */
+  --font-sans:'Manrope',sans-serif;
+
+  /* SEMANTIC · type roles */
+  --font-heading:var(--font-sans);--font-body:var(--font-sans);
+
+  /* PRIMITIVE · type size (static) — floors: footnote 12 · content ≥14 · body 16 */
+  --fs-2xs:.75rem;--fs-xs:.75rem;--fs-sm:.875rem;--fs-md:.875rem;
+  --fs-lg:1rem;--fs-xl:1rem;--fs-2xl:1.125rem;--fs-3xl:1.5rem;
+  --fs-footnote:.75rem;--fs-caption:.875rem;--fs-body:1rem;  /* role aliases */
+
+  /* PRIMITIVE · type size (fluid display — desktop max shown) */
+  --fs-display:clamp(2.8rem,7.5vw,7.5rem);--fs-h1:clamp(2.8rem,5.5vw,4.5rem);
+  --fs-h1-project:clamp(2.5rem,5vw,4.5rem);--fs-h2:clamp(1.8rem,3.2vw,2.8rem);
+  --fs-h3:clamp(1.5rem,3vw,2.2rem);--fs-h4:clamp(1.4rem,2.5vw,2rem);
+  --fs-lead:clamp(1rem,1.5vw,1.15rem);
+
+  /* PRIMITIVE · weight / line-height / tracking */
+  --fw-light:300;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;
+  --lh-none:1;--lh-tight:1.05;--lh-snug:1.25;--lh-normal:1.5;--lh-relaxed:1.6;--lh-loose:1.7;
+  --ls-tighter:-.03em;--ls-tight:-.025em;--ls-tight-sm:-.02em;--ls-normal:0;
+  --ls-wide:.06em;--ls-wider:.1em;--ls-widest:.12em;
+
+  /* PRIMITIVE · effects */
+  --shadow-card:0 1px 4px rgba(17,16,9,.05),0 2px 10px rgba(17,16,9,.04);
+  --shadow-card-hover:0 8px 36px rgba(17,16,9,.13),0 2px 6px rgba(17,16,9,.07);
+  --shadow-img:0 4px 24px rgba(17,16,9,.09);
+  --ease:cubic-bezier(.16,1,.3,1);--spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:.18s;--dur-base:.3s;--dur-slow:.55s;
+
+  /* PRIMITIVE · layout */
+  --container-max:1320px;--container-pad:var(--space-8);
+
+  /* SEMANTIC · surfaces */
+  --color-bg:var(--c-sand-200);--color-bg-alt:var(--c-sand-100);
+  --color-surface-dark:var(--c-ink-900);--color-placeholder:var(--c-sand-300);
+  --color-glass:rgba(232,226,218,.85);
+  /* SEMANTIC · ink on light */
+  --color-ink:rgba(17,16,9,1);--color-ink-55:rgba(17,16,9,.55);
+  --color-ink-15:rgba(17,16,9,.15);--color-ink-08:rgba(17,16,9,.08);
+  /* SEMANTIC · on dark */
+  --color-on-dark:var(--c-cream);--color-on-dark-65:rgba(245,240,234,.65);
+  --color-on-dark-42:rgba(245,240,234,.42);--color-on-dark-32:rgba(245,240,234,.32);
+  --color-on-dark-15:rgba(245,240,234,.15);--color-on-dark-09:rgba(245,240,234,.09);
+  /* SEMANTIC · on image + success + ring + radius roles */
+  --color-on-image:rgba(255,255,255,.75);
+  --color-success-ink:var(--c-green-800);--color-success-bg:rgba(34,197,94,.14);
+  --color-success-bg-soft:rgba(34,197,94,.1);--color-success-border:rgba(34,197,94,.25);
+  --ring-focus:0 0 0 3px var(--color-ink-08);
+  --radius-card:var(--radius-lg);--radius-field:var(--radius-sm);
+
+  /* SEMANTIC · primary / buttons (primary CTA is the only black) */
+  --color-primary:var(--c-espresso-900);
+  --color-primary-ink:var(--c-cream);
+  --color-primary-hover:rgba(32,30,15,.85);
+  --color-secondary-border:var(--color-ink-15);
+  --color-secondary-ink:var(--color-ink);
+  --color-tertiary-ink:var(--color-ink-55);
+
+  /* SEMANTIC · nav tabs (NOT the primary black — warm gray) */
+  --color-tab-ink:var(--color-ink-55);
+  --color-tab-hover-bg:var(--color-ink-08);
+  --color-tab-hover-ink:var(--color-ink);
+  --color-tab-active-bg:var(--c-stone-400);
+  --color-tab-active-ink:var(--color-ink);
+  --color-tab-pressed-bg:var(--c-stone-500);
+
+  /* SEMANTIC · type roles */
+  --fs-subheader:var(--fs-xl);   /* "and I've done…" subheader */
+
+  /* SEMANTIC · grain / noise (x=.5 y=.5, black 25%, density 100%).
+     --grain-filter: applies grain WITHIN an element's shape (text glyphs, images,
+     dark surfaces) — never the page bg. --grain-tex: tileable texture for the
+     header's gradient grain overlay. */
+  --grain-filter:url(#grain);
+  --grain-tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* LEGACY ALIASES (existing markup/JS) */
+  --bg:var(--color-bg);--bg2:var(--color-bg-alt);--dark:var(--color-surface-dark);
+  --ink:var(--color-ink);--ink55:var(--color-ink-55);--ink15:var(--color-ink-15);--ink08:var(--color-ink-08);
+  --white:var(--c-cream);--glass:var(--color-glass);
+  --fh:var(--font-heading);--fb:var(--font-body);
+}

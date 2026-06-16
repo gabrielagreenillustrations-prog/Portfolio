@@ -1,0 +1,47 @@
+/* ============================================================================
+   PROJECT DETAIL — hero, header, lead, timeline, alternating sections, CTA.
+   ============================================================================ */
+.proj-back{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--fs-sm);font-weight:var(--fw-medium);color:var(--color-ink-55);cursor:pointer;border:none;background:none;font-family:var(--font-body);transition:color var(--dur-fast);padding:var(--space-4) 0}
+.proj-back:hover{color:var(--color-ink)}
+.proj-hero{max-width:var(--container-max);margin:var(--space-8) auto 0;padding:0 var(--space-12)}
+.proj-hero img,.proj-hero video{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-card);display:block}
+.proj-hero--contain img{aspect-ratio:auto;object-fit:contain}
+.proj-header{max-width:var(--container-max);margin:0 auto;padding:var(--space-12) var(--container-pad) 0}
+.proj-eyebrow{font-size:var(--fs-2xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-ink-55);margin-bottom:var(--space-3);display:block}
+.proj-title{font-family:var(--font-heading);font-size:var(--fs-h1-project);font-weight:var(--fw-bold);line-height:var(--lh-tight);letter-spacing:var(--ls-tighter);margin-bottom:var(--space-5)}
+.proj-lead{font-size:var(--fs-lead);color:var(--color-ink-55);line-height:var(--lh-loose);max-width:65ch;margin-bottom:var(--space-10)}
+.proj-timeline{margin-bottom:var(--space-16);padding:var(--space-7) 0;border-top:1px solid var(--color-ink-15);border-bottom:1px solid var(--color-ink-15)}
+.proj-timeline-label{display:block;font-size:var(--fs-2xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-ink-55);margin-bottom:var(--space-4)}
+.proj-meta{display:flex;gap:var(--space-12);flex-wrap:wrap}
+.proj-meta-item h4{font-size:var(--fs-2xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--color-ink-55);margin-bottom:var(--space-1)}
+.proj-meta-item p{font-size:var(--fs-lg);font-weight:var(--fw-medium)}
+.proj-body{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad) var(--space-24)}
+.proj-section{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;margin-bottom:var(--space-20)}
+.proj-section.rev{direction:rtl}
+.proj-section.rev>*{direction:ltr}
+.proj-section-img{border-radius:var(--radius-card);overflow:hidden;aspect-ratio:4/3;background:var(--color-placeholder);box-shadow:var(--shadow-img)}
+.proj-section-img img,.proj-section-img video{width:100%;height:100%;object-fit:cover;border-radius:0}
+.proj-section-title{font-family:var(--font-heading);font-size:var(--fs-h4);font-weight:var(--fw-bold);line-height:var(--lh-snug);letter-spacing:var(--ls-tight-sm);margin-bottom:var(--space-1-5)}
+.proj-section-sub{display:block;font-size:var(--fs-lg);font-weight:var(--fw-medium);color:var(--color-ink-55);margin-bottom:var(--space-3);font-style:italic}
+.proj-section-desc{font-size:var(--fs-lg);color:var(--color-ink-55);line-height:var(--lh-loose)}
+/* Phone-frame hero — beige background, portrait video centred inside 16/9 container */
+.proj-hero-phone-frame{width:100%;aspect-ratio:16/9;background:var(--c-sand-100);border-radius:var(--radius-card);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.proj-hero-phone-frame video{height:82%;width:auto;aspect-ratio:auto;border-radius:36px;object-fit:contain;display:block}
+
+/* Phone-frame sections — beige background, phone content centred in 4/3 area */
+.proj-section-img--phone{background:var(--c-sand-100) !important;position:relative}
+.proj-section-img--phone img{object-fit:contain !important;background:var(--c-sand-100)}
+.proj-section-img--phone video{position:absolute !important;width:auto !important;height:82% !important;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:36px;object-fit:cover !important}
+
+/* Video-contain section — full video visible with side gutters, bg matches page */
+.proj-section-img--vid{background:var(--color-bg) !important;display:flex;align-items:center;justify-content:center}
+.proj-section-img--vid video{width:calc(100% - 80px) !important;height:auto !important;max-height:100% !important;object-fit:contain !important}
+
+/* Text-only section — no image column, prose centred */
+.proj-section--text-only{display:block;max-width:65ch;margin-left:auto;margin-right:auto;text-align:center}
+.proj-section--text-only .proj-section-title{margin-bottom:var(--space-3)}
+
+.proj-cta{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad) var(--space-24);text-align:center;border-top:1px solid var(--color-ink-15);padding-top:var(--space-16)}
+.proj-cta h3{font-family:var(--font-heading);font-size:var(--fs-h3);font-weight:var(--fw-bold);letter-spacing:var(--ls-tight);margin-bottom:var(--space-3)}
+.proj-cta p{font-size:var(--fs-lg);color:var(--color-ink-55);margin-bottom:var(--space-7)}
+.proj-cta-btns{display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap}

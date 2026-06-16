@@ -1,0 +1,9 @@
+/* ============================================================================
+   BADGE & TAG — pill labels (footnote size).
+   ============================================================================ */
+.badge{display:inline-flex;align-items:center;gap:.3em;padding:.15em .62em;border-radius:var(--radius-pill);font-size:var(--fs-2xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-wide);text-transform:uppercase;background:var(--color-ink-08);margin-bottom:var(--space-1-5)}
+.badge.g{background:var(--color-success-bg);color:var(--color-success-ink)}
+.badge.s{background:transparent;border:1px dashed var(--color-ink-15);color:var(--color-ink-55)}
+
+.tags{display:flex;flex-wrap:wrap;gap:var(--space-1-5);margin-top:var(--space-3)}
+.tag{padding:.24em .68em;border-radius:var(--radius-pill);background:var(--color-ink-08);font-size:var(--fs-xs);font-weight:var(--fw-medium)}

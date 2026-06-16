@@ -1,0 +1,19 @@
+/* ============================================================================
+   FORM — contact inputs, textarea, submit, success state, and contact links.
+   ============================================================================ */
+.cf{display:flex;flex-direction:column;gap:var(--space-3)}
+.cf-g{display:flex;flex-direction:column;gap:var(--space-1)}
+.cf-l{font-size:var(--fs-2xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-wider);text-transform:uppercase}
+.cf-i,.cf-t{width:100%;padding:var(--space-3) var(--space-4);border:1px solid var(--color-ink-15);border-radius:var(--radius-field);background:var(--color-bg);font-family:var(--font-body);font-size:var(--fs-lg);color:var(--color-ink);resize:none;transition:border-color var(--dur-fast),box-shadow var(--dur-fast)}
+.cf-i:focus,.cf-t:focus{outline:none;border-color:var(--color-ink);box-shadow:var(--ring-focus)}
+.cf-i::placeholder,.cf-t::placeholder{color:var(--color-ink-55)}
+.cf-t{min-height:125px}
+.cf-btn{align-self:flex-start;padding:var(--space-3) var(--space-7);background:var(--color-primary);color:var(--color-primary-ink);border-radius:var(--radius-field);font-size:var(--fs-lg);font-weight:var(--fw-medium);transition:opacity var(--dur-fast),transform var(--dur-fast)}
+.cf-btn:hover{opacity:.8;transform:translateY(-1px)}
+.cf-ok{padding:var(--space-3) var(--space-4);background:var(--color-success-bg-soft);border:1px solid var(--color-success-border);border-radius:var(--radius-field);font-size:var(--fs-sm);color:var(--color-success-ink);display:none}
+
+/* Contact links (icon + label list) */
+.c-links{display:flex;flex-direction:column;gap:var(--space-2)}
+.c-link{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--fs-md);font-weight:var(--fw-medium);color:var(--color-ink-55);transition:color var(--dur-fast)}
+.c-link:hover{color:var(--color-ink)}
+.c-link svg{width:15px;height:15px;flex-shrink:0}

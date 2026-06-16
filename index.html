@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Gabriela Landaverde — Product Designer</title>
+<meta name="description" content="Product UX/UI Designer. Fintech, AI, CRMs for LATAM."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles/tokens.css"/>
+<link rel="stylesheet" href="styles/base.css"/>
+<link rel="stylesheet" href="styles/layout/nav.css"/>
+<link rel="stylesheet" href="styles/layout/footer.css"/>
+<link rel="stylesheet" href="styles/components/buttons.css"/>
+<link rel="stylesheet" href="styles/components/card.css"/>
+<link rel="stylesheet" href="styles/components/badge.css"/>
+<link rel="stylesheet" href="styles/components/form.css"/>
+<link rel="stylesheet" href="styles/components/cursor.css"/>
+<link rel="stylesheet" href="styles/pages/home.css"/>
+<link rel="stylesheet" href="styles/pages/project.css"/>
+<link rel="stylesheet" href="styles/pages/about.css"/>
+<link rel="stylesheet" href="styles/pages/cv.css"/>
+<link rel="stylesheet" href="styles/pages/contact.css"/>
+<link rel="stylesheet" href="styles/responsive.css"/>
+</head>
+<body>
+
+<!-- GRAIN filter — film-grain texture kept WITHIN an element's shape (glyphs, images,
+     dark surfaces). x/y=0.5, black 25%, density 100%. Token: var(--grain-filter). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.5 0.5" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="luminanceToAlpha" result="na"/>
+    <feComponentTransfer in="na" result="na2"><feFuncA type="linear" slope="0.25" intercept="0"/></feComponentTransfer>
+    <feComposite in="na2" in2="SourceGraphic" operator="in" result="grain"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="grain"/></feMerge>
+  </filter>
+</svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="nav-logo" onclick="goPage('home')" aria-label="Home" style="cursor:pointer">
+        <img class="isologo" src="assets/icons/Icon.svg" alt="Gabriela Landaverde" width="38" height="38"/>
+      </a>
+      <nav class="nav-links">
+        <a onclick="goPage('home')"  data-page="home"  class="active">Work</a>
+        <a onclick="goPage('about')" data-page="about">About</a>
+        <a onclick="goPage('cv')"    data-page="cv">CV</a>
+      </nav>
+    </div>
+    <a class="nav-cta" onclick="goPage('contact')">Get in touch</a>
+    <button class="nav-burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob" id="mob">
+  <button class="mob-x" onclick="mobClose()">✕</button>
+  <a onclick="goPage('home');mobClose()">Work</a>
+  <a onclick="goPage('about');mobClose()">About</a>
+  <a onclick="goPage('cv');mobClose()">CV</a>
+  <a onclick="goPage('contact');mobClose()">Get in touch</a>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="hero-kicker">Hello, I'm Gabi</span>
+      <div class="ticker-outer" id="to">
+        <div class="ticker-stage" id="tt">
+          <div class="ticker-face"><h1>I turn complexity into simple experiences</h1></div>
+          <div class="ticker-face"><h1>I've designed data-driven experiences that convert</h1></div>
+          <div class="ticker-face"><h1>Cats represent me — peaceful and endlessly curious</h1></div>
+          <div class="ticker-face"><h1>Design found me through illustration</h1></div>
+          <div class="ticker-face"><h1>Gaming sparked my curiosity for how things work</h1></div>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div><h4>Currently</h4><p>Product Designer at Atomchat</p></div>
+        <div><h4>Previously at</h4><p>n1co technologies, Siman.com</p></div>
+      </div>
+    </div>
+    <div class="hero-div"></div>
+    <div class="hero-right">
+      <img src="assets/images/profile/prof-pic.png" alt="Gabriela Landaverde" class="hero-avatar"/>
+      <div>
+        <h3>Nice seeing you here!</h3>
+        <p>I am a Product UX/UI Designer with a background in illustration and a growing obsession with building what I design.</p>
+        <div class="hero-soc">
+          <a href="https://www.linkedin.com/in/gabriela-landaverde-a741a1213/" target="_blank" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:agabriela.landaverde@gmail.com" aria-label="Email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:2rem">
+    <div class="work-grid">
+      <article class="pcard" data-proj="smartons">
+        <div class="pcard-thumb"><video src="assets/videos/smartons-cover.mp4" autoplay loop muted playsinline style="border-radius:0;width:100%;height:100%;object-fit:cover"></video><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge g">↗ Shipped</span><h2 class="pcard-title">Smartons — AI flowbuilder</h2><p class="pcard-desc">AI-powered workflow component replacing branched flows with prompt-based conversational agents.</p><p class="pcard-meta">Atomchat · 2024</p></div>
+      </article>
+      <article class="pcard" data-proj="loyalty">
+        <div class="pcard-thumb pcard-thumb--phone"><video src="assets/videos/co1ns-cover.mp4" autoplay loop muted playsinline></video><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge">UX/UI</span><h2 class="pcard-title">Loyalty program redesign</h2><p class="pcard-desc">Led UX/UI for Loyalty 2.0: rank progression, cashback boosts, and Activity Points flows.</p><p class="pcard-meta">n1co technologies · 2023</p></div>
+      </article>
+      <article class="pcard" data-proj="ach">
+        <div class="pcard-thumb"><img src="assets/images/projects/ach-hero.png" alt="ACH" style="border-radius:0"/><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge">Fintech</span><h2 class="pcard-title">ACH deposits</h2><p class="pcard-desc">Designing trust into every step of a cross-border deposit experience for LATAM investors.</p><p class="pcard-meta">Hapi app · 2024</p></div>
+      </article>
+      <article class="pcard" data-proj="aichat">
+        <div class="pcard-thumb"><video src="assets/videos/aichat-cover.mp4" autoplay loop muted playsinline style="border-radius:0;width:100%;height:100%;object-fit:cover"></video><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge g">↗ Shipped</span><h2 class="pcard-title">AI chat assistance</h2><p class="pcard-desc">Intelligent context-aware conversational support inside a fintech app for LATAM users.</p><p class="pcard-meta">n1co · 2025</p></div>
+      </article>
+      <article class="pcard" data-proj="premium">
+        <div class="pcard-thumb pcard-thumb--phone"><video src="assets/videos/premium-plans-cover.mp4" autoplay loop muted playsinline></video><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge">Fintech</span><h2 class="pcard-title">Premium plans</h2><p class="pcard-desc">Designing the upgrade path that converts free users into paying subscribers across two segments.</p><p class="pcard-meta">n1co · 2024</p></div>
+      </article>
+      <article class="pcard" data-proj="aisim">
+        <div class="pcard-thumb"><img src="assets/images/projects/aisim-hero.png" alt="AI Simulator" style="border-radius:0"/><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge g">↗ Shipped</span><h2 class="pcard-title">AI simulator</h2><p class="pcard-desc">Stress-test conversational flows with AI before launch — hundreds of simulated conversations across customer profiles.</p><p class="pcard-meta">Atomchat · 2024</p></div>
+      </article>
+      <article class="pcard" data-proj="kb">
+        <div class="pcard-thumb"><img src="assets/images/projects/kb-hero.png" alt="Knowledge Base" style="border-radius:0"/><button class="pcard-btn"></button></div>
+        <div class="pcard-body"><span class="badge">Design Systems</span><h2 class="pcard-title">Knowledge base module</h2><p class="pcard-desc">A centralized, Drive-like library so multiple AI agents share one source of truth.</p><p class="pcard-meta">Atomchat · 2024</p></div>
+      </article>
+      <article class="pcard soon">
+        <div class="pcard-thumb pcard-thumb--vid"><video src="assets/videos/pawsitters-preview.mov" autoplay loop muted playsinline></video></div>
+        <div class="pcard-body"><span class="badge s">→ Building</span><h2 class="pcard-title">PawSitters</h2><p class="pcard-desc">Full platform for pet care services — online store, service bookings, client &amp; admin profiles, and a dashboard to manage it all. Powered by Supabase.</p><p class="pcard-meta">Personal project · 2026</p></div>
+      </article>
+      <article class="pcard soon">
+        <div class="pcard-thumb"><div class="pcard-fill">ADHD Focus App</div></div>
+        <div class="pcard-body"><span class="badge s">→ Soon</span><h2 class="pcard-title">ADHD focus app</h2><p class="pcard-desc">A mobile companion designed to help people with ADHD manage tasks, build focus, and navigate daily routines with clarity.</p><p class="pcard-meta">Concept · 2026</p></div>
+      </article>
+    </div>
+  </div>
+  <div style="height:4rem"></div>
+</div>
+
+<!-- PROJECT DETAIL -->
+<div class="page" id="page-project">
+  <div class="proj-hero"><img id="ph-img" src="" alt=""/></div>
+  <div class="proj-header">
+    <h1 class="proj-title" id="ph-title"></h1>
+    <span class="proj-eyebrow" id="ph-eye"></span>
+    <p class="proj-lead" id="ph-lead"></p>
+    <div class="proj-timeline">
+      <span class="proj-timeline-label">Project timeline</span>
+      <div class="proj-meta" id="ph-meta"></div>
+    </div>
+  </div>
+  <div class="proj-body" id="ph-body"></div>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Photo LEFT — sticky portrait -->
+      <div class="about-img">
+        <img src="assets/images/profile/prof-pic.png" alt="Gabriela Landaverde"/>
+      </div>
+      <!-- Text RIGHT -->
+      <div class="about-text">
+        <h1 class="about-h">Hello, <span>I'm Gabi</span></h1>
+        <p class="about-ph">Product Designer & Vibecoder · El Salvador</p>
+        <p class="about-p">I'm a Product UX/UI Designer with a background in illustration and a growing obsession with building what I design. I thrive on complex problems — fintech flows, AI products, and design systems that actually scale.</p>
+        <p class="about-p">I bridge design and code: I architect token-based design systems, submit PRs, and believe pixel-perfect handoff starts with understanding how the code works.</p>
+        <div class="about-2col">
+          <div><h4>Day job</h4><p>I design technology products from the ground up — advocating for users, analyzing metrics, behaviors and trends, and aligning with business needs and team capabilities to bring projects to life that actually work for real people.</p></div>
+          <div><h4>Out of office</h4><p>I'm an outdoor person at heart — walking, running, cycling and sports are a big pillar in my life. But I'm equally passionate about art, cinema, and spending time with my dog and 5 kittens.</p></div>
+        </div>
+        <div class="about-soc">
+          <a href="https://www.linkedin.com/in/gabriela-landaverde-a741a1213/" target="_blank" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:agabriela.landaverde@gmail.com" aria-label="Email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="sp-section">
+      <h2>My superpowers</h2>
+      <div class="sp-grid">
+        <div class="sp-item"><h4>Velocity by default</h4><p>Startups move fast. Enterprise retail doesn't wait. I've navigated both — and built an instinct for ideating, designing, and iterating at a pace that keeps up with, and sometimes outpaces, the roadmap.</p></div>
+        <div class="sp-item"><h4>Designing for the giant version</h4><p>I don't design for today's problem. I design for the product that will exist two years from now — self-service, scalable, handling 10× the users. Every solution is a stepping stone toward that.</p></div>
+        <div class="sp-item"><h4>Dev-native designer</h4><p>I've worked inside IDEs, navigated GitHub flows, and learned how design translates to code. That lens makes every decision sharper — and means I never design the impossible to build.</p></div>
+        <div class="sp-item"><h4>Wired to learn</h4><p>New tools, emerging patterns, shifting behaviors — I don't wait for things to go mainstream before exploring them. Curiosity is how I stay ahead, and staying ahead is how I stay useful.</p></div>
+      </div>
+    </div>
+    <!-- INTERESTS TABS — 4 personal passions -->
+    <div class="interests-section">
+      <h2>A bit more about me</h2>
+      <div class="int-tabs">
+        <button class="int-tab active" onclick="switchIntTab('travel')" data-tab="travel" type="button">Travel</button>
+        <button class="int-tab" onclick="switchIntTab('art')" data-tab="art" type="button">Art</button>
+        <!-- <button class="int-tab" onclick="switchIntTab('cats')" data-tab="cats" type="button">Cats</button> -->
+      </div>
+      <!-- TRAVEL -->
+      <div class="int-panel active" id="int-travel">
+        <div class="travel-layout">
+          <div class="travel-desc-card">
+            <div class="travel-count">9</div>
+            <p class="travel-count-label">countries explored</p>
+            <p class="travel-body">I love stepping out of my comfort zone and venturing into new places. Learning about different cultures teaches me just how far I'm capable of going.</p>
+          </div>
+          <div class="flags-grid">
+            <div class="country-item"><span class="country-flag">🇯🇵</span><span class="country-name">Japan</span></div>
+            <div class="country-item"><span class="country-flag">🇲🇽</span><span class="country-name">Mexico</span></div>
+            <div class="country-item"><span class="country-flag">🇨🇭</span><span class="country-name">Switzerland</span></div>
+            <div class="country-item"><span class="country-flag">🇪🇸</span><span class="country-name">Spain</span></div>
+            <div class="country-item"><span class="country-flag">🇮🇹</span><span class="country-name">Italy</span></div>
+            <div class="country-item"><span class="country-flag">🇫🇷</span><span class="country-name">France</span></div>
+            <div class="country-item"><span class="country-flag">🇨🇴</span><span class="country-name">Colombia</span></div>
+            <div class="country-item"><span class="country-flag">🇨🇷</span><span class="country-name">Costa Rica</span></div>
+            <div class="country-item"><span class="country-flag">🇬🇹</span><span class="country-name">Guatemala</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- ART -->
+      <div class="int-panel" id="int-art">
+        <div class="int-grid art-layout">
+          <div class="int-desc-card">
+            <h3>Illustrator at heart</h3>
+            <p>Portraits for real people, fanarts, and my own comic. Before Figma there was a sketchbook — and there still is one.</p>
+          </div>
+          <div class="int-img-slot"></div>
+          <div class="int-img-slot"></div>
+          <div class="int-img-slot"></div>
+          <div class="int-img-slot"></div>
+        </div>
+      </div>
+      <!-- CATS (hidden)
+      <div class="int-panel" id="int-cats">
+        <div class="int-grid cats-layout">
+          <div class="int-img-slot"></div>
+          <div class="int-img-slot"></div>
+          <div class="int-desc-card">
+            <h3>Silent creatures</h3>
+            <p>I admire cats for their behavior, habits, and way of being. They bring me an enormous sense of calm. I have 5 kittens.</p>
+          </div>
+          <div class="int-img-slot"></div>
+          <div class="int-img-slot"></div>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </div>
+  <div style="height:4rem"></div>
+</div>
+
+<!-- CV -->
+<div class="page" id="page-cv">
+  <div class="container">
+    <div class="cv-top">
+      <div><h2 class="cv-h2">Curriculum vitae</h2></div>
+      <a href="assets/docs/Gabriela_Landaverde_CV_2026.pdf" download class="cv-dl"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="border-radius:0"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download CV</a>
+    </div>
+    <div class="cv-block">
+      <h3 class="cv-bh">Professional experience</h3>
+      <div class="cv-row"><div class="cv-yr">2023 — Now</div><div class="cv-c"><h4>Atomchat · Remote</h4><p class="cv-role">Product Designer on SaaS</p><ul><li>Designed Smartons, an AI-powered flowbuilder replacing complex branched flows with prompt-based conversational agents.</li><li>Designed the Knowledge Base module including data structure guidelines and upload validations for AI-ready sources.</li><li>Built and documented 10+ design system components with token architecture and rich HTML specs.</li><li>Led UX research using SUS surveys and moderated Maze sessions across core modules.</li></ul></div></div>
+      <div class="cv-row"><div class="cv-yr">2026</div><div class="cv-c"><h4>Hapi app · Remote</h4><p class="cv-role">Product Designer · Side Project</p><ul><li>Designed end-to-end Deposits flow (ACH + card) with recurring logic and Coinflow integration.</li><li>Designed investment portfolio dashboard with charts for total invested, available balance, and asset distribution.</li><li>Architected design token structure enabling consistent theming and scalable component management.</li><li>Vibecoded components in the codebase and submitted PRs for pixel-perfect fidelity.</li></ul></div></div>
+      <div class="cv-row"><div class="cv-yr">2022 — 2023</div><div class="cv-c"><h4>n1co technologies · El Salvador</h4><p class="cv-role">UX/UI Designer</p><ul><li>Led UX/UI for Loyalty 2.0 (co1ns): rank progression, cashback boosts, and Activity Points flows.</li><li>Designed Split and Credits features from 0 to handoff.</li><li>Migrated component libraries using Atomic Design methodology.</li></ul></div></div>
+      <div class="cv-row"><div class="cv-yr">2023</div><div class="cv-c"><h4>Siman.com · El Salvador</h4><p class="cv-role">UX/UI Designer</p><ul><li>Improved shopping experience for one of LATAM's largest retail platforms.</li><li>Applied enterprise-scale design system management.</li></ul></div></div>
+    </div>
+    <div class="cv-block"><h3 class="cv-bh">Education</h3><div class="cv-row" style="border:none;padding-top:0"><div class="cv-yr">2023</div><div class="cv-c"><h4>Universidad Católica de El Salvador</h4><p class="cv-role">Graphic Design</p><p>Photography · Illustration · Branding · Advertising graphic design</p></div></div></div>
+    <div class="cv-block"><h3 class="cv-bh">Technical skills</h3><div class="tags"><span class="tag">Research</span><span class="tag">Wireframing</span><span class="tag">Prototyping</span><span class="tag">Design Systems</span><span class="tag">Design Tokens</span><span class="tag">Figma</span><span class="tag">HTML / CSS</span><span class="tag">Vibe coding</span><span class="tag">Web & Mobile Responsive</span><span class="tag">Usability Tests</span><span class="tag">User Interviews</span><span class="tag">Data Analytics</span><span class="tag">Agile / Scrum</span><span class="tag">AI Products</span><span class="tag">Fintech UX</span></div></div>
+    <div class="cv-block"><h3 class="cv-bh">Certifications · 2024</h3><div class="cv-row" style="border:none;padding-top:0"><div class="cv-yr"></div><div class="cv-c"><ul><li>Uxcel: Design Composition</li><li>Uxcel: Gamification</li><li>Uxcel: UX Design Foundations</li><li>Udemy UX: Laws and fundamentals with practical examples</li></ul></div></div></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-h">Let's build something great</h2>
+        <p class="contact-p">Got a project in mind? Whether it's a complex fintech flow, an AI product, or a design system — I'd love to hear about it.</p>
+        <div class="c-links">
+          <a href="mailto:agabriela.landaverde@gmail.com" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>agabriela.landaverde@gmail.com</a>
+          <a href="https://www.linkedin.com/in/gabriela-landaverde-a741a1213/" target="_blank" class="c-link"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn — Gabriela Landaverde</a>
+          <a href="assets/docs/Gabriela_Landaverde_CV_2026.pdf" download class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download CV / Portfolio</a>
+        </div>
+      </div>
+      <form class="cf" id="cform" novalidate>
+        <div class="cf-g"><label class="cf-l" for="fn">Name</label><input class="cf-i" id="fn" type="text" placeholder="Your name" required/></div>
+        <div class="cf-g"><label class="cf-l" for="fe">Email</label><input class="cf-i" id="fe" type="email" placeholder="your@email.com" required/></div>
+        <div class="cf-g"><label class="cf-l" for="fs">Subject</label><input class="cf-i" id="fs" type="text" placeholder="Project type, collaboration…"/></div>
+        <div class="cf-g"><label class="cf-l" for="fm">Message</label><textarea class="cf-t" id="fm" placeholder="Tell me about your project…" required></textarea></div>
+        <div class="cf-ok" id="cf-ok">✓ Thanks! I'll get back to you within 24 hours.</div>
+        <button type="submit" class="cf-btn">Send message →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <img class="isologo" src="assets/icons/Icon.svg" alt="Gabriela Landaverde"/>
+      <div>
+        <p class="site-footer__name">Gabriela Landaverde</p>
+        <p class="site-footer__tagline">Product Designer &amp; Vibecoder · El Salvador</p>
+      </div>
+    </div>
+    <div class="site-footer__links">
+      <a class="footer-link" href="https://www.linkedin.com/in/gabriela-landaverde-a741a1213/" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+      </a>
+      <a class="footer-link" href="mailto:agabriela.landaverde@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>Email me
+      </a>
+      <a class="footer-link" href="assets/docs/Gabriela_Landaverde_CV_2026.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download CV
+      </a>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 Gabriela Landaverde. Built with ♡ and vibe coding.</span>
+    <span>El Salvador · Available for freelance &amp; full-time</span>
+  </div>
+</footer>
+
+<div id="cursor-chip" aria-hidden="true"></div>
+
+<script src="scripts/data/projects.js"></script>
+<script src="scripts/router.js"></script>
+<script src="scripts/ticker.js"></script>
+<script src="scripts/cursor.js"></script>
+<script>
+function switchIntTab(tab){
+  document.querySelectorAll('.int-tab').forEach(function(t){t.classList.toggle('active',t.dataset.tab===tab)});
+  document.querySelectorAll('.int-panel').forEach(function(p){p.classList.toggle('active',p.id==='int-'+tab)});
+}
+</script>
+</body>
+</html>

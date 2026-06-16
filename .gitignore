@@ -1,0 +1,12 @@
+.DS_Store
+.archive/
+.figma-capture/
+
+# Videos demasiado grandes para GitHub (>50MB) — alojar en Cloudinary
+assets/videos/co1ns-cover.mp4
+assets/videos/loyalty-cover.mp4
+assets/videos/aisim-problem.mov
+assets/videos/pawsitters-preview.mov
+assets/videos/premium-plans-cover.mp4
+assets/videos/smartons-types.mov
+assets/videos/redesign-1.mov
