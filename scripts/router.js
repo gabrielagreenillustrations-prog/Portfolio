@@ -69,7 +69,8 @@ function goProject(id) {
 }
 
 document.querySelectorAll('.pcard').forEach(function(c){
-  c.querySelector('.pcard-btn').onclick = function(){ goProject(c.dataset.proj); };
+  var btn = c.querySelector('.pcard-btn');
+  if(btn) btn.onclick = function(){ goProject(c.dataset.proj); };
 });
 
 document.getElementById('burger').onclick = function(){ document.getElementById('mob').classList.add('open'); };

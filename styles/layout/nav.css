@@ -66,9 +66,22 @@
 /* PRIMARY CTA — the only black in the UI */
 .nav-cta{padding:var(--space-2) var(--space-5);background:var(--color-primary);color:var(--color-primary-ink);border-radius:var(--radius-pill);font-size:var(--fs-md);font-weight:var(--fw-semibold);transition:opacity var(--dur-fast);cursor:pointer}
 .nav-cta:hover{opacity:.85}
-.nav-burger{display:none;flex-direction:column;gap:5px;width:22px}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px}
 .nav-burger span{display:block;height:1.5px;background:var(--color-ink);border-radius:var(--radius-xs)}
-.mob{display:none;position:fixed;inset:0;background:var(--color-glass);backdrop-filter:blur(24px);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-10)}
-.mob.open{display:flex}
+.mob{display:none;position:fixed;inset:0;z-index:200;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:calc(60px + var(--space-8)) var(--space-6) 0;gap:var(--space-6);isolation:isolate}
+.mob.open{display:flex;animation:mobIn .22s var(--ease) both}
+@keyframes mobIn{from{opacity:0}to{opacity:1}}
+/* Layer 1 — backdrop blur + grain, masked to fade top→bottom */
+.mob::before,.mob::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1}
+.mob::before{
+  backdrop-filter:blur(20px) saturate(150%);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
+  background-image:var(--grain-tex);
+  background-size:140px 140px;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,1) 40%,rgba(0,0,0,.3) 65%,rgba(0,0,0,0) 100%);
+          mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,1) 40%,rgba(0,0,0,.3) 65%,rgba(0,0,0,0) 100%);
+}
+/* Layer 2 — sand tint gradient, opaque at top, transparent at bottom */
+.mob::after{background:linear-gradient(to bottom,rgba(232,226,218,.97) 0%,rgba(232,226,218,.95) 40%,rgba(232,226,218,.30) 65%,rgba(232,226,218,0) 100%)}
 .mob a{font-family:var(--font-heading);font-size:var(--fs-h3);font-weight:var(--fw-bold);cursor:pointer}
-.mob-x{position:absolute;top:var(--space-5);right:var(--space-6);font-size:var(--fs-3xl)}
+.mob-x{position:absolute;top:var(--space-2);right:var(--space-4);width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:var(--fs-2xl)}

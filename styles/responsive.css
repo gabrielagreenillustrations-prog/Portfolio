@@ -3,12 +3,12 @@
    ============================================================================ */
 @media(max-width:1024px){.hero-grid{grid-template-columns:2fr 1px 1fr}.hero-left{padding-right:var(--space-10)}.hero-right{padding-left:var(--space-10)}}
 @media(max-width:800px){
-  .hero-grid{grid-template-columns:1fr;padding:var(--space-8) var(--space-6) var(--space-10)}
+  .hero-grid{grid-template-columns:1fr;padding:var(--space-8) var(--space-6) var(--space-10);row-gap:var(--space-6)}
   .hero-div{display:none}.hero-left{padding-right:0}
-  .hero-right{padding-left:0;padding-top:0;flex-direction:row;align-items:center;gap:var(--space-5)}
-  .hero-avatar{width:56px;height:56px}
+  .hero-right{padding-left:0;padding-top:0;flex-direction:column;align-items:flex-start;gap:var(--space-4)}
+  .hero-avatar{width:150px;height:150px}
   .about-grid,.contact-grid{grid-template-columns:1fr}
-  .about-img{display:none}
+  .about-img{width:50%;position:static}
   .sp-grid,.about-2col,.edu-grid{grid-template-columns:1fr}
   .proj-section{grid-template-columns:1fr}.proj-section.rev{direction:ltr}
   /* Interests — stack travel, 2-col image grids */
@@ -18,6 +18,8 @@
 }
 @media(max-width:560px){
   .nav-links{display:none}.nav-burger{display:flex}
+  .nav-cta{display:none}
+  .nav-logo .isologo{width:44px;height:44px}
   .work-grid{grid-template-columns:1fr}
   .cv-row{grid-template-columns:1fr}
   /* Interests — single column on small screens */
