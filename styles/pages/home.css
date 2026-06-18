@@ -45,7 +45,7 @@
 .hero-meta p{font-size:var(--fs-md);color:var(--color-ink-55)}
 .hero-div{width:1px;background:var(--color-ink-15);align-self:stretch}
 .hero-right{padding-left:var(--space-12);display:flex;flex-direction:column;gap:var(--space-2);justify-content:flex-end;min-width:0}
-.hero-avatar{width:60px;height:60px;border-radius:var(--radius-full);object-fit:cover;filter:grayscale(100%) var(--grain-filter);flex-shrink:0}
+.hero-avatar{width:150px;height:150px;border-radius:var(--radius-full);object-fit:cover;filter:grayscale(100%) var(--grain-filter);flex-shrink:0}
 .hero-right h3{font-family:var(--font-heading);font-size:var(--fs-2xl);font-weight:var(--fw-bold);line-height:var(--lh-snug)}
 .hero-right p{font-size:var(--fs-lg);color:var(--color-ink-55);line-height:var(--lh-normal)}
 .hero-soc{display:flex;gap:var(--space-2);margin-top:var(--space-1-5)}
